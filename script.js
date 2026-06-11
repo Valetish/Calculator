@@ -30,6 +30,14 @@ buttons.forEach(button => {
     button.addEventListener("click", ( ) => {
         const buttonText = button.textContent;
 
-        display.textContent += buttonText;
+        if(button.classList.contains("clear")){
+            display.textContent = "";
+        } else if(button.classList.contains("operator")){
+            console.log("operator clicked: ", buttonText);
+        } else if(button.classList.contains("equals")){
+            console.log("equals clicked");
+        } else{
+            display.textContent += buttonText;
+        }
     });
 });
