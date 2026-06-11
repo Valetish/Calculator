@@ -1,2 +1,2 @@
 #Web Calculator
-#made with The Odin Project
+made with The Odin Project
