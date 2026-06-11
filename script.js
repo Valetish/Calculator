@@ -1,6 +1,6 @@
 
 function add(firstNumber, secondNumber){
-    return firstNumber * secondNumber;
+    return firstNumber + secondNumber;
 }
 function subtract(firstNumber, secondNumber){
     return firstNumber - secondNumber;
@@ -24,6 +24,11 @@ function operate(operator, firstNumber, secondNumber) {
 const display = document.querySelector(".display");
 const buttons = document.querySelectorAll("button");
 
+let result = 0;
+let operator = "";
+let firstNumber = "";
+let secondNumber = "";
+
 display.textContent = "";
 
 buttons.forEach(button => {
@@ -32,12 +37,35 @@ buttons.forEach(button => {
 
         if(button.classList.contains("clear")){
             display.textContent = "";
+            result = 0;
+            firstNumber = "";
+            secondNumber = "";
+            operator = "";
         } else if(button.classList.contains("operator")){
-            console.log("operator clicked: ", buttonText);
+            operator = buttonText;
+            // console.log("operator clicked: ", buttonText);
         } else if(button.classList.contains("equals")){
             console.log("equals clicked");
+
+            if(operator == "+")
+                display.textContent = add(Number(firstNumber), Number(secondNumber));
+            else if(operator == "-")
+                display.textContent = subtract(Number(firstNumber), Number(secondNumber));
+            else if(operator == "×")
+                display.textContent = multiply(Number(firstNumber), Number(secondNumber));
+            else if(operator == "÷")
+                display.textContent = divide(Number(firstNumber), Number(secondNumber));
         } else{
-            display.textContent += buttonText;
+            if(operator === ""){
+                firstNumber += buttonText;
+                display.textContent = firstNumber;
+            } else{
+                secondNumber += buttonText;
+                display.textContent = secondNumber;
+                console.log(firstNumber);
+                console.log(operator);
+                console.log(secondNumber);}
+            }
         }
     });
 });
