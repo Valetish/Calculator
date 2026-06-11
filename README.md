@@ -1,8 +1,5 @@
 # Calculator
-
-A clean and interactive calculator built with vanilla JavaScript.
-
-Created as part of **The Odin Project** to practice DOM manipulation, event handling, and application state management.
+Created as part of **The Odin Project** to practice DOM manipulation, event handling, and application state management
 
 ## Features
 
