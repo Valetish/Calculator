@@ -19,4 +19,17 @@ function operate(operator, firstNumber, secondNumber) {
     return operator(firstNumber, secondNumber);
 }
 
-console.log(operate(divide, 14, 2));
+// console.log(operate(divide, 14, 2));
+
+const display = document.querySelector(".display");
+const buttons = document.querySelectorAll("button");
+
+display.textContent = "";
+
+buttons.forEach(button => {
+    button.addEventListener("click", ( ) => {
+        const buttonText = button.textContent;
+
+        display.textContent += buttonText;
+    });
+});
