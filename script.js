@@ -65,7 +65,6 @@ buttons.forEach(button => {
                 console.log(firstNumber);
                 console.log(operator);
                 console.log(secondNumber);}
-            }
         }
     });
 });
